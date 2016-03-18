@@ -1,4 +1,10 @@
 <ion-view title="Satellizer Ionic">
+  <ion-nav-buttons side="left">
+      <button class="button button-icon ion-person-stalker" ng-click="openModal(1)"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-compose" ng-click="openModal(2)"></button>
+      </ion-nav-buttons>
   <ion-content class="padding">
     <div ng-if="!isAuthenticated()">
       <button ng-click="authenticate('facebook')" class="button button-block icon-left ion-social-facebook">

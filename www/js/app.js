@@ -14,6 +14,12 @@ angular.module('starter', ['ionic', 'satellizer', 'starter.controllers'])
             controller: 'HomeCtrl'
           }
         }
+      })
+      // setup an abstract state for the tabs directive
+      .state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html'
       });
 
     $urlRouterProvider.otherwise('/');
@@ -29,7 +35,7 @@ angular.module('starter', ['ionic', 'satellizer', 'starter.controllers'])
     };
 
     if (ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
-      commonConfig.redirectUri = 'http://0.0.0.0:8080/';
+      commonConfig.redirectUri = 'http://cescdrop.tk';
     }
 
     $authProvider.facebook(angular.extend({}, commonConfig, {
