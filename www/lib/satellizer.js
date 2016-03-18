@@ -271,7 +271,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
           };
 
           $auth.setToken = function(token) {
-            shared.setToken({ access_token: token });
+            shared.setToken({ access_token:token });
           };
 
           $auth.removeToken = function() {

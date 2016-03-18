@@ -1,5 +1,10 @@
 angular.module('starter', ['ionic', 'satellizer', 'starter.controllers'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.headers.common = 'Content-Type: application/json';
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
     $stateProvider
       .state('app', {
         abstract: true,
@@ -56,6 +61,7 @@ angular.module('starter', ['ionic', 'satellizer', 'starter.controllers'])
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        cordova.plugins.Keyboard.disableScroll(true);
       }
       if (window.StatusBar) {
         StatusBar.styleDefault();
