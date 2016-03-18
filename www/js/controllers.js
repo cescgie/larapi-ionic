@@ -14,9 +14,9 @@ angular.module('starter.controllers', [])
         .catch(function(error) {
           $scope.modal1.hide();
           $ionicPopup.alert({
-            title: 'Erro',
-            content: error
-          })
+            title: 'Error',
+            content: error.data.message
+          });
         });
     };
     $scope.authenticate = function(provider) {
@@ -91,7 +91,7 @@ angular.module('starter.controllers', [])
           $scope.modal2.hide();
           $ionicPopup.alert({
             title: 'Error',
-            content: response
+            content: response.data.message
           })
         });
     };

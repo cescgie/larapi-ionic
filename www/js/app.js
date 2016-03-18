@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'satellizer', 'starter.controllers'])
         templateUrl: 'templates/tabs.html'
       });
 
-    $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/tab');
   })
   .config(function($authProvider) {
     var commonConfig = {
